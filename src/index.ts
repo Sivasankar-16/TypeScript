@@ -77,3 +77,61 @@ loginUserData.userName = 'ts@1234';
 
 // Invalid
 // loginUserData.userId = 1212;
+
+/***  Type Alias ***/
+type UserData = {
+  emailId: string;
+  userName: string;
+  mobileNumber: number;
+  readonly userId: number;
+};
+
+let userInfo: UserData = {
+  emailId: 'ts@email.com',
+  userName: 'ts',
+  mobileNumber: 9876543210,
+  userId: 1234
+};
+
+/*** Union  ***/
+function returnUserId(userId: number | string): string {
+  return typeof userId == 'number' ? userId.toString() : userId;
+}
+
+returnUserId('Guest@1234');
+returnUserId(new Date(Date.now()).getTime());
+
+/*** Intersection ***/
+type CheckInInfo = {
+  checkInTime: string;
+};
+
+type CheckOutInfo = {
+  checkOutTime: string;
+};
+
+let employeeAttendence: CheckInInfo & CheckOutInfo = {
+  checkInTime: '08/02/2020 09:15:00',
+  checkOutTime: '08/02/2020 18:10:00'
+};
+
+/*** Literals ***/
+type Gender = 'male' | 'female' | 'transgender';
+
+let myGender: Gender = 'male'; // validate and set the exact value
+
+/*** Null and Undefined ***/
+function validateUserMobileNumber(
+  userMobileNumber: number | null | undefined
+): boolean {
+  if (userMobileNumber) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(validateUserMobileNumber(987654321)); // prints true
+console.log(validateUserMobileNumber(null)); // prints false
+console.log(validateUserMobileNumber(undefined)); // prints false
+
