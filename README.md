@@ -5,7 +5,7 @@
 
 **Setup**:
 1. Install Node and npm
-2. Install type script using the below command in terminal.
-   npm i -g typescript (adding sudo at the beg is recommended)
-3. Check the version of typescript with below command.
-   tsc -v
+2. Install type script using this command in terminal.
+   `npm i -g typescript` (adding sudo at the beg is recommended)
+4. Check the version of typescript with the command.
+   `tsc -v`
