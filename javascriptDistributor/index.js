@@ -53,4 +53,31 @@ let loginUserData = {
     userId: 1234
 };
 loginUserData.userName = 'ts@1234';
+let userInfo = {
+    emailId: 'ts@email.com',
+    userName: 'ts',
+    mobileNumber: 9876543210,
+    userId: 1234
+};
+function returnUserId(userId) {
+    return typeof userId == 'number' ? userId.toString() : userId;
+}
+returnUserId('Guest@1234');
+returnUserId(new Date(Date.now()).getTime());
+let employeeAttendence = {
+    checkInTime: '08/02/2020 09:15:00',
+    checkOutTime: '08/02/2020 18:10:00'
+};
+let myGender = 'male';
+function validateUserMobileNumber(userMobileNumber) {
+    if (userMobileNumber) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(validateUserMobileNumber(987654321));
+console.log(validateUserMobileNumber(null));
+console.log(validateUserMobileNumber(undefined));
 //# sourceMappingURL=index.js.map
